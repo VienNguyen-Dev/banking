@@ -12,13 +12,13 @@ const Footer = ({ user, type = "desktop" }: FooterProps) => {
   return (
     <footer className="footer">
       <div className={type === "mobile" ? "footer_name-mobile" : "footer_name"}>
-        <p className="text-xl font-bold text-gray-700">{user?.name[0]}</p>
+        <p className="text-xl font-bold text-gray-700">{user?.firstName[0]}</p>
       </div>
       <div className={`${type === "mobile" ? "footer_email-mobile" : "footer_email"} `}>
-        <h1 className=" truncate text-gray-800 font-semibold">{user.name}</h1>
+        <h1 className=" truncate text-gray-800 font-semibold">{`${user.firstName} ${user.lastName}`}</h1>
         <p className="text-14 text-gray-600 truncate font-normal">{user?.email}</p>
       </div>
-      <div className={type === "mobile" ? "footer_image-mobile" : "footer_image"} onClick={handleLogOut}>
+      <div className={"footer_image"} onClick={handleLogOut}>
         <Image src={"/icons/logout.svg"} fill alt="logout" />
       </div>
     </footer>

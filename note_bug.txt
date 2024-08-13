@@ -1,0 +1,5 @@
+Bug:
+ function getLoggedIn()
+Rightsidebar => display: none. Fix bug: change => lg
+Sidebar => side not exactly. display of label: none and xl:w-[355px]
+

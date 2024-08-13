@@ -29,7 +29,6 @@ const AuthForm = ({ type }: { type: string }) => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
 
-    console.log(values);
     try {
       //Sign up with Appwrite and create flaid token
       if (type === "sign-up") {
