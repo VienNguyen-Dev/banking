@@ -34,7 +34,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
             </Link>
           );
         })}
-        <PlaidLink user={user} variant="ghost" />
+        <PlaidLink user={user} />
       </nav>
       <Footer user={user} type="desktop" />
     </section>

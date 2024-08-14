@@ -18,7 +18,7 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
     <section className="home">
       <div className="home-content">
         <header className="home-header">
-          <HeaderBox type="greeting" title="Wellcome" user={`${loggedIn?.firstName}` || "Guest"} subtext="Access & manage your account and transactions efficiently." />
+          <HeaderBox type="greeting" title="Wellcome," user={`${loggedIn?.firstName}` || "Guest"} subtext="Access & manage your account and transactions efficiently." />
 
           <TotalBalanceBox accounts={accountData} totalBanks={accounts?.totalBanks} totalCurrentBalance={accounts?.totalCurrentBalance} />
         </header>
