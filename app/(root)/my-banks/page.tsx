@@ -16,7 +16,7 @@ const MyBank = async () => {
         <div className=" space-y-2">
           <h2 className=" font-bold text-[16px]">Your cards</h2>
           <div className="flex flex-wrap gap-6">
-            {accounts && accountData.map((account: Account) => <BankCard showBalance={true} account={account} userName={`${loggedIn.firstName} ${loggedIn.lastName}`} />)}
+            {accounts && accountData.map((account: Account) => <BankCard key={account.id} showBalance={true} account={account} userName={`${loggedIn.firstName} ${loggedIn.lastName}`} />)}
           </div>
         </div>
       </div>
