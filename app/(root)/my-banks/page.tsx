@@ -1,11 +1,15 @@
 import BankCard from "@/components/BankCard";
 import HeaderBox from "@/components/HeaderBox";
 import { getAccounts } from "@/lib/actions/bank.actions";
-import { getBanks, getLoggedInUser } from "@/lib/actions/user.action";
+import { getLoggedInUser } from "@/lib/actions/user.action";
+import { redirect } from "next/navigation";
 import React from "react";
 
 const MyBank = async () => {
   const loggedIn = await getLoggedInUser();
+  if (!loggedIn) {
+    redirect("/sign-in");
+  }
   const accounts = await getAccounts({ userId: loggedIn.$id });
   if (!accounts) return;
   const accountData = accounts?.data;
