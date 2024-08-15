@@ -30,7 +30,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
               <div className=" relative size-6">
                 <Image src={link.imgURL} alt={link.label} fill className={cn({ " brightness-[3] invert-0": isActive })} />
               </div>
-              <p className={cn("sidebar-label", { "!text-white": isActive })}> {link.label}</p>
+              <p className={cn("sidebar-label", { "!text-white": isActive })}>{link.label}</p>
             </Link>
           );
         })}
