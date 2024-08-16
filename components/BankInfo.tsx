@@ -26,7 +26,7 @@ const BankInfo = ({ appwriteItemId, account, type }: BankInfoProps) => {
         "hover:shadow-sm cursor-pointer": type === "card",
       })}
     >
-      <figure className={` flec-center h-fit rounded-full bg-blue-100 ${colors.lightBg}`}>
+      <figure className={` flex-center h-fit rounded-full bg-blue-100 ${colors.lightBg}`}>
         <Image src={"/icons/connect-bank.svg"} width={20} height={20} alt={account.subtype} className=" m-2 min-w-5" />
       </figure>
       <div className=" flex flex-col flex-1 w-full justify-center gap-1">
