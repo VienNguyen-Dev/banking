@@ -68,9 +68,9 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
       id: tranferData.$id,
       name: tranferData.name!,
       amount: tranferData.amount!,
-      paymentChannel: tranferData.paymentChannel,
+      paymentChannel: tranferData.channel,
       category: tranferData.category,
-      date: tranferData.date,
+      date: tranferData.$createdAt,
       type: tranferData.senderBankId === bank.$id ? "debit" : "credit",
     }));
 
@@ -97,7 +97,8 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
       sharableId: bank.sharableId,
     };
     //gom hai ông nội này lại => sort the transactions by recent date
-    const allTransactions = [...transactions, ...tranferTransactions].sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime());
+    const allTransactions = [...transactions, ...tranferTransactions].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
     return parseStringify({ data: account, allTransactions });
   } catch (error) {
     console.log("Error while get a bank account", error);

@@ -2,9 +2,9 @@
 
 import { ID, Query } from "node-appwrite";
 import { createAdminClient } from "../appwrite.config";
-import { formatDateTime, parseStringify } from "../utils";
-import { date } from "zod";
+import { parseStringify } from "../utils";
 const { APPWRITE_DATABASE_ID: DATABASE_ID, APPWRITE_TRANSACTION_COLLECTION_ID: TRANSACTION_COLLECTION_ID } = process.env;
+
 export const getTransactionByBankId = async ({ bankId }: getTransactionsByBankIdProps) => {
   try {
     const { database } = await createAdminClient();
@@ -27,7 +27,6 @@ export const createTransaction = async (transactionData: CreateTransactionProps)
     const transaction = await database.createDocument(DATABASE_ID!, TRANSACTION_COLLECTION_ID!, ID.unique(), {
       channel: "online",
       category: "Transfer",
-      date: formatDateTime(new Date()).dateTime,
       ...transactionData,
     });
     return parseStringify(transaction);
