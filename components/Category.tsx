@@ -1,8 +1,7 @@
 import React from "react";
 
-import CategoryBadge from "./CategoryBadge";
 import { topCategoryStyles } from "@/constants";
-import { cn, formatAmount } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Progress } from "./ui/progress";
 
