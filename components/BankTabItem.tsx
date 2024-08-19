@@ -8,8 +8,11 @@ const BankTabItem = ({ account, appwriteItemId }: BankTabItemProps) => {
   const router = useRouter();
   const isActive = appwriteItemId === account.appwriteItemId;
   const hanldeBankChange = () => {
+    const searchParamsUrl = new URLSearchParams(searchParams.toString());
+    searchParamsUrl.set("id", account.appwriteItemId);
+    searchParamsUrl.set("page", "1");
     const newUrl = formUrlQuery({
-      params: searchParams.toString(),
+      params: searchParamsUrl.toString(),
       key: "id",
       value: account?.appwriteItemId,
     });
